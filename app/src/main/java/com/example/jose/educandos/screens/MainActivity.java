@@ -1,9 +1,12 @@
-package com.example.jose.educandos;
+package com.example.jose.educandos.screens;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +16,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.jose.educandos.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -79,7 +84,26 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_todas_as_turmas) {
 
-        } else if (id == R.id.minhas_matriculas) {
+        } else if (id == R.id.nav_minhas_matriculas) {
+
+        } else if (id == R.id.nav_manutencao) {
+
+        } else if (id == R.id.nav_sair) {
+
+            AlertDialog.Builder mensagem = new AlertDialog.Builder(this);
+            mensagem.setTitle("Atenção");
+            mensagem.setMessage("Deseja mesmo sair?");
+            mensagem.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    SharedPreferences preferences = getSharedPreferences("com.example.jose.educandos.preferencias", MODE_PRIVATE);
+                    SharedPreferences.Editor prefsEditor = preferences.edit();
+                    prefsEditor.putBoolean("logado", false);
+                    prefsEditor.apply();
+                    finish();
+                }
+            });
+            mensagem.show();
 
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

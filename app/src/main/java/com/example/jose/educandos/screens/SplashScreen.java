@@ -1,4 +1,4 @@
-package com.example.jose.educandos;
+package com.example.jose.educandos.screens;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import com.example.jose.educandos.R;
 
 public class SplashScreen extends AppCompatActivity {
 
