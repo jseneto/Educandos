@@ -86,6 +86,8 @@ public class MinhasTurmas extends AppCompatActivity
 
         } else if (id == R.id.nav_minhas_matriculas) {
 
+        } else if (id == R.id.nav_lista_disciplinas) {
+
         } else if (id == R.id.nav_manutencao) {
 
         } else if (id == R.id.nav_sair) {
@@ -103,6 +105,7 @@ public class MinhasTurmas extends AppCompatActivity
                     finish();
                 }
             });
+            mensagem.setNegativeButton("Não", null);
             mensagem.show();
 
         }
