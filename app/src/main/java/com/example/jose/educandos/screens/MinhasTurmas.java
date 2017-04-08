@@ -19,7 +19,7 @@ import android.view.MenuItem;
 
 import com.example.jose.educandos.R;
 
-public class MainActivity extends AppCompatActivity
+public class MinhasTurmas extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
